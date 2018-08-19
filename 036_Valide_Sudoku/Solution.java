@@ -99,37 +99,35 @@
 
 
 
-// MY SOLUTION 4 (Just like solution 3, but use only one int array)
-// Runtime: 30ms
-import java.util.HashSet;
+// // MY SOLUTION 4 (Just like solution 3, but use only one int array)
+// // Runtime: 30ms
+// import java.util.HashSet;
 
-class Solution {
-    public boolean isValidSudoku(char[][] board) {
-    	// Using 32-bit int and bit operations as Set
-		int[] checkSet = new int[9];
+// class Solution {
+//     public boolean isValidSudoku(char[][] board) {
+//     	// Using 32-bit int and bit operations as Set
+// 		int[] checkSet = new int[9];
         
-    	for (int i = 0; i < 9; i ++) {
-    		for (int j = 0; j < 9; j ++) {
-				if (board[i][j] != '.') {
-                    int rowNum = 1 << (board[i][j] - '0');
-                    int colNum = 1 << (board[i][j] - '0' + 10);
-                    int cubeNum = 1 << (board[i][j] - '0' + 20);
+//     	for (int i = 0; i < 9; i ++) {
+//     		for (int j = 0; j < 9; j ++) {
+// 				if (board[i][j] != '.') {
+//                     int rowNum = 1 << (board[i][j] - '1');
+//                     int colNum = 1 << (board[i][j] - '1' + 9);
+//                     int cubeNum = 1 << (board[i][j] - '1' + 18);
                     
-                    if ((checkSet[i] & rowNum) != 0
-                            || (checkSet[j] & colNum) != 0
-                            || (checkSet[3 * (i / 3) + j / 3] & cubeNum) != 0) {
-                        System.out.println(i);
-                        System.out.println(j);
-                        return false;
-                    }
+//                     if ((checkSet[i] & rowNum) != 0
+//                             || (checkSet[j] & colNum) != 0
+//                             || (checkSet[3 * (i / 3) + j / 3] & cubeNum) != 0) {
+//                         return false;
+//                     }
                     
-                    checkSet[i] |= rowNum;
-                    checkSet[j] |= colNum;
-                    checkSet[3 * (i / 3) + j / 3] |= cubeNum;
-				}
-    		}
-    	}
+//                     checkSet[i] |= rowNum;
+//                     checkSet[j] |= colNum;
+//                     checkSet[3 * (i / 3) + j / 3] |= cubeNum;
+// 				}
+//     		}
+//     	}
 
-    	return true;
-    }
-}
+//     	return true;
+//     }
+// }
