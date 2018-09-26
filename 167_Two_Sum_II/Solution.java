@@ -1,7 +1,7 @@
 // Author: Code-Beast
 
 // MY SOLUTION 1 (Using Double Pointers)
-// Runtime:  
+// Runtime: 0ms
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
     	// Define left pointer and right pointer
